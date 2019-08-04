@@ -45,30 +45,32 @@ code {
     text-align: center;
   }
 
-  div.movie-list {
-    display: inline-block;
+.movieList-wrap a {
+    display: inline-flex;
     flex-wrap: wrap;
     width: 250px;
     height: 400px;
     margin: 40px 30px;
     justify-content: space-between;
+  color: #313539;
   }
 
 
-.movie-list > div {
+.movie-list > a {
 
 }
-.movie-list > img {
+a > img {
         width: 100%;
         height: 100%;
 }
 
 .movie-title {
-  margin-top:15px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
+  margin: 15px auto;
 }
 .movieList-wrap {
   text-align: center;
   vertical-align: top;
+  margin-bottom: 20px;
 }

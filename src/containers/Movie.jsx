@@ -13,7 +13,7 @@ class Movie extends Component {
         this.setState( {movie});
     }
     render() {
-        console.log("this.state.movie", this.state.movie);
+
         return (
             <div>
 SomeText
