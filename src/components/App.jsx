@@ -1,7 +1,7 @@
 import React from "react";
-import { Layout } from 'antd';
+import { Layout } from 'antd/lib/index';
 
-import { HeaderComponent } from "../components";
+import { HeaderComponent } from "./index";
 import { MainContainer } from "../routes";
 
 const { Footer } = Layout;

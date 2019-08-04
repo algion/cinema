@@ -1,9 +1,10 @@
  import React from "react";
-import { connect } from "react-redux";
+ import { connect } from "react-redux";
  import { Layout } from 'antd';
  import { Switch, Route } from "react-router-dom";
 
  import { getMovies } from "../actions";
+ import { MainPageContainer, MovieContainer } from "../containers";
 
 const { Content } = Layout;
 
@@ -18,8 +19,8 @@ export class Main extends React.Component {
             padding: '0 50px'
         }}>
         <Switch>
-            <Route path={"/"} exact/>
-            <Route path={"/movie/:id"}/>
+            <Route path={"/"} exact component={MainPageContainer}/>
+            <Route path={"/movie/:id"} component={MovieContainer}/>
         </Switch>
     </Content>
         )
@@ -28,6 +29,6 @@ export class Main extends React.Component {
 
 const mapDispatchToProps = {
     getMovies
-}
+};
 
 export const MainContainer = connect(null, mapDispatchToProps)(Main);
