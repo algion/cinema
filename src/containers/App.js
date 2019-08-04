@@ -1,17 +1,15 @@
-import React from 'react';
+import React from "react";
+import { Layout } from 'antd';
 
-import { Header, Footer } from "../components";
-import { Main } from "./Main"
-import '../assets/style/App.css'
+import { HeaderComponent } from "../components";
+import { MainContainer } from "../routes";
 
-function App() {
-  return (
-    <div>
-      <Header/>
-      <Main/>
-      <Footer/>
-    </div>
-  );
-}
+const { Footer } = Layout;
 
-export default App;
+export const App = () => (
+    <Layout className="layout">
+    <HeaderComponent/>
+        <MainContainer/>
+        <Footer>Ant Design ©2018 Created by Ant UED</Footer>
+    </Layout>
+);

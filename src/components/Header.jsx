@@ -1,17 +1,20 @@
 import React from 'react';
 
-import { Logo } from "./Logo";
-import { Nav } from "./Nav";
-import { UserIcon } from "./User";
+import { Menu, Layout } from "antd";
 
-export const Header = () => (
-  <header>
-      <div className="left-block">
-          <Logo/>
-          <Nav/>
-      </div>
-          <div className="right-block">
-              <UserIcon/>
-          </div>
-          </header>
+const { Header } = Layout;
+
+export const HeaderComponent = () => (
+  <Header>
+      <div className="logo"/>
+      <Menu
+          theme="dark"
+          mode="horizontal"
+          defaultSelectedKeys={['1']}
+      >
+          <Menu.Item key="1">nav 1</Menu.Item>
+          <Menu.Item key="2">nav 2</Menu.Item>
+          <Menu.Item key="3">nav 3</Menu.Item>
+      </Menu>
+  </Header>
 );
