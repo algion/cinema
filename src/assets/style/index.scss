@@ -35,15 +35,52 @@ code {
     background: #fff;
   }
 
+  .ant-spin {
+    position: absolute;
+    top: 40%;
+    left: calc(50% - 38px);
+  }
+  .ant-menu li {
+    position: relative;
+    font-size: 17px;
+
+    padding: 9px 30px;
+  }
+
+.ant-menu-item .ant-menu-item-selected {
+
+}
+
   header {
     ul {
-      line-height: 64px;
+    }
+    nav {
+      a{
+        display: inline-block;
+        color:white;
+        font-size: 17px;
+        text-align: center;
+        padding: 0 55px;
+        transition: .3s ease-in all;
+        
+        &.active {
+          background: #349cff;
+        }
+        &:hover {
+          background: #d7f3ff;
+          color: #349cff;
+        }
+      }
     }
   }
 
   footer {
     text-align: center;
   }
+img {
+  width: 100%;
+  height: auto;
+}
 
 .movieList-wrap a {
     display: inline-flex;
@@ -57,7 +94,6 @@ code {
 
 
 .movie-list > a {
-
 }
 a > img {
         width: 100%;
@@ -65,12 +101,89 @@ a > img {
 }
 
 .movie-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   margin: 15px auto;
+  color: #383838;
+  text-align: center;
+}
+.filter {
+  margin-top: 30px;
+  display:flex;
+  justify-content: flex-end;
+  h3 {
+    margin-right: 15px;
+  }
+  input, .ant-select {
+    width: 250px;
+  }
+  &>div>span {
+    margin:0 10px;
+  }
+}
+.movie-page {
+  margin-top: 20px;
+  background: #f7f7f7;
+  min-height: 80vh;
+  padding: 15px;
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+  h1 {
+    text-align: center;
+  }
+  .movie-info {
+    margin: 30px 10%;
+    display: flex;
+    justify-content: space-between;
+    div {
+      background: #eee;
+    }
+    &>div:first-child {
+      width: 25%;
+    }
+    &>div:last-child {
+      width: 72%;
+    }
+    .info-block {
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      &>div:first-child {
+        width: 10px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      &>div:last-child {
+        width: 88%;
+      }
+      iframe {
+        border: 0;
+      }
+    }
+  }
 }
 .movieList-wrap {
   text-align: center;
   vertical-align: top;
   margin-bottom: 20px;
+}
+
+.btn-buy {
+  text-align: center;
+  width: 80%;
+  margin: 20px auto;
+  background: #ffad40 !important;
+  border: 1px solid #e29938;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+
+  &:hover {
+    background: #ff932b !important;
+    border-color:#e29938;
+  }
+}
+svg {
+  width: 4em !important;
+  height: 4em !important;
 }

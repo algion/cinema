@@ -1,20 +1,15 @@
 import React from 'react';
-
-import { Menu, Layout } from "antd";
-
+import { Layout } from "antd";
+import { Link, NavLink } from "react-router-dom";
 const { Header } = Layout;
 
 export const HeaderComponent = () => (
   <Header>
-      <div className="logo"/>
-      <Menu
-          theme="dark"
-          mode="horizontal"
-          defaultSelectedKeys={['1']}
-      >
-          <Menu.Item key="1">nav 1</Menu.Item>
-          <Menu.Item key="2">nav 2</Menu.Item>
-          <Menu.Item key="3">nav 3</Menu.Item>
-      </Menu>
+      <Link to="/" className="logo"/>
+     <nav>
+         <NavLink to="/" activeClassName="active">Films</NavLink>
+         <NavLink to="/shedule" activeClassName="active">Shedule</NavLink>
+         <NavLink to="/user" activeClassName="active">3</NavLink>
+     </nav>
   </Header>
 );
