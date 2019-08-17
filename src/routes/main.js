@@ -9,8 +9,6 @@
 const { Content } = Layout;
 
 export class Main extends React.Component {
-
-
     componentDidMount() {
         this.props.getMovies();
     }
@@ -22,21 +20,22 @@ export class Main extends React.Component {
             padding: '0 50px'
         }}>
         { isLoading
-        ? <Spin indicator={<Icon type="loading-3-quarters" style={{ fontsize: 76 }} spin/>}/>
-        : <Switch>
-            <Route path={"/"} exact component={MainPageContainer}/>
-            <Route path={"/movie/:id"} component={MovieContainer}/>
-        </Switch>}
+            ? <Spin indicator={<Icon type="loading-3-quarters" style={{ fontSize: 80 }} spin />} />
+            : <Switch>
+                <Route path={"/"} exact component={MainPageContainer}/>
+                <Route path={"/movie/:id"} component={MovieContainer}/>
+            </Switch>}
     </Content>
         )
     }
 }
 
-const mapDispatchToProps = {
-    getMovies
-};
+ const mapDispatchToProps = {
+     getMovies
+ };
 
-const mapStateToProps = (state) => ({
-    isLoading:state.loading.isLoading
-});
-export const MainContainer = connect(mapStateToProps, mapDispatchToProps)(Main);
+ const mapStateToProps = (state) => ({
+     isLoading:state.loading.isLoading
+ });
+ export const MainContainer = connect(mapStateToProps, mapDispatchToProps)(Main);
+

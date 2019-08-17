@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 
 import {InfoBlock} from "../components";
-
 class Movie extends Component {
     state = {
         movie: {}
@@ -16,23 +15,23 @@ class Movie extends Component {
     }
     render() {
         const { movie } = this.state;
-        const actors = movie.actors ? movie.actors.join(", ").slice(0, -2) : "";
-        const genre = movie.genre ? movie.genre.join(", ") : "";
-        const countries = movie.country ? movie.country.join(", ") : "";
+        const actors = movie.actors ? movie.actors.filter(Boolean).join(", ") : "";
+        const genre = movie.genre ? movie.genre.filter(Boolean).join(", ") : "";
+        const countries = movie.country ? movie.country.filter(Boolean).join(", ") : "";
 
-
+console.log("this.state.movie", this.state.movie);
         return (
-            <div className={"movie-page"}>
+            <div className="movie-page">
 <h1 className="movie-title">{movie.title}</h1>
                 <div className="movie-info">
-                    <div>
+                    <div className="poster">
                         <img src={movie.poster} alt="poster"/>
                         <div className="btn-buy">Buy ticket</div>
                     </div>
                     <div>
                         <InfoBlock
-                        title="Actors:"
-                        content={movie.actors ? actors : ""}
+                            title="Actors:"
+                            content={movie.actors ? actors : ""}
                         />
 
                         <InfoBlock
@@ -61,15 +60,14 @@ class Movie extends Component {
                         <InfoBlock
                             title="Trailer:"
                             content={<iframe title="Trailer"
-                                width="640px"
-                                height="360px"
-                                src={movie.trailer}
-                            allowFullScreen
+                                             width="640px"
+                                             height="360px"
+                                             src={movie.trailer}
+                                             allowFullScreen
                             />}
                         />
                     </div>
                 </div>
-
             </div>
         );
     }
