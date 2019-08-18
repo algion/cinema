@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux";
-import { Input } from "antd";
+import { Input, Select } from "antd";
 
 
 import {MovieList} from "../components";
+const {Option} = Select;
 
 const MainPage = ({ movies, genres }) => {
     const [filteredMovies, setFilteredMovies] = useState([]);
     const [valueInput, setValueInput] = useState("");
+    const [valueSelect, setValueSelect] = useState("");
     const handleChangeInput = (e) => {
         const { value } = e.target;
         setValueInput(value);
@@ -17,13 +19,22 @@ const MainPage = ({ movies, genres }) => {
     };
     const filterMovies = Object.getOwnPropertyNames(filteredMovies);
     const checkMovies = filterMovies.length-1;
-    console.log("genres", genres)
+    console.log("genres", genres);
+    const handleChangeSelect = (value) => {
+        setValueSelect(value);
+        setFilteredMovies(movies.filter(item => (
+            item.genres.some(elem => elem.trim() === value)
+        )));
+    };
 
     return (
         <React.Fragment>
             <div className="filter">
                 <h2>Filter:</h2>
                 <div>
+                    <Select onChange={handleChangeSelect}>
+                        {genres.map(item => <Option key={item} value="item">{item}</Option>)}
+                    </Select>
                     <Input
                         type="text"
                         name="filter-name"
