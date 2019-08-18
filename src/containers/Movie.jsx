@@ -20,6 +20,7 @@ class Movie extends Component {
         const countries = movie.country ? movie.country.filter(Boolean).join(", ") : "";
 
 console.log("this.state.movie", this.state.movie);
+
         return (
             <div className="movie-page">
 <h1 className="movie-title">{movie.title}</h1>

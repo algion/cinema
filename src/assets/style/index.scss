@@ -47,7 +47,14 @@ code {
 
   padding: 9px 30px;
 }
+.ant-input-affix-wrapper{
+  width:250px !important;
+}
+.ant-input-suffix {
+  position: absolute;
+  right: 0;
 
+}
 header {
     ul {
       line-height: 64px;
@@ -168,5 +175,19 @@ a > img {
   &:hover {
     background: #ff932b !important;
     border-color:#e29938;
+  }
+}
+.filter {
+  margin-top: 30px;
+  display:flex;
+  justify-content: flex-end;
+  h3 {
+    margin-right: 15px;
+  }
+  input, .ant-select {
+    width: 250px;
+  }
+  &>div>span {
+    margin:0 10px;
   }
 }

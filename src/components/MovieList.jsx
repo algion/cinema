@@ -9,5 +9,3 @@ export const MovieList = ({movie}) => {
         </Link>
     );
 };
-
-
