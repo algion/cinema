@@ -11,7 +11,7 @@ export const movies = (state = initialValues, action)=> {
             const genres = action.payload.reduce((acc, item) => {
                 if (item.genre && item.genre.length) {
                     item.genre.forEach((elem) => {
-                        if (!acc.includes(elem.trim())) {
+                        if (elem && !acc.includes(elem.trim())) {
                             acc.push(elem.trim());
                         }
                     });
