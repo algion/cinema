@@ -2,23 +2,22 @@ import { SET_MOVIES } from "../constants";
 
 const initialValues = {
     movies: [],
-    genres: {},
+    genres: [],
 };
 
 export const movies = (state = initialValues, action)=> {
     switch (action.type) {
         case SET_MOVIES:
-            const genres = new Set();
-                action.payload.forEach((item) => {
-                if (item.genre) {
+            const genres = action.payload.reduce((acc, item) => {
+                if (item.genre && item.genre.length) {
                     item.genre.forEach((elem) => {
-                        if (elem){
-                            const formattedElem = elem.trim();
-                            genres.add(formattedElem);
+                        if (!acc.includes(elem.trim())) {
+                            acc.push(elem.trim());
                         }
                     });
                 }
 
+                return acc
             }, []);
 
 console.log("genres", genres);
