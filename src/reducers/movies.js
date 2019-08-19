@@ -20,7 +20,7 @@ export const movies = (state = initialValues, action)=> {
                 return acc
             }, []);
 
-console.log("genres", genres);
+
             return {
                 ...state,
                 movies: action.payload,

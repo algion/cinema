@@ -1,10 +1,9 @@
 import axios from "axios";
 
-import {SET_MOVIES, URL_MOVIES, IS_LOADING, LOADING_FAIL} from "../constants";
+import {SET_MOVIES, URL_MOVIES} from "../constants";
+import { isLoading, loadingFail} from "./general";
 
-export const isLoading = () => ({ type: IS_LOADING });
 export const setMovies = (movies) => ({ type: SET_MOVIES, payload: movies });
-export const loadingFail = () => ({ type: LOADING_FAIL });
 
 export const getMovies = () => {
     return dispatch => {

@@ -1,4 +1,4 @@
-import { IS_LOADING, LOADING_FAIL, SET_MOVIES } from "../constants";
+import {IS_LOADING, LOADING_FAIL, SET_MOVIES, SET_SESSIONS} from "../constants";
 
 const initialValues = {
     isLoading: false
@@ -12,6 +12,7 @@ export const loading = (state = initialValues, action)=> {
                 isLoading: true
             };
         case SET_MOVIES:
+        case SET_SESSIONS:
         case LOADING_FAIL:
             return {
                 ...state,

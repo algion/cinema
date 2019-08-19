@@ -1,6 +1,13 @@
 export const BASE_URL = "http://subdomain.entony.fs.a-level.com.ua/api/";
 export const URL_MOVIES = `${BASE_URL}movie/`;
+export const URL_SESSIONS = `${URL_MOVIES}session`;
 
 export const SET_MOVIES = "SET_MOVIES";
 export const IS_LOADING = "IS_LOADING";
 export const LOADING_FAIL = "IS_LOADING";
+export const SET_SESSIONS = "SET_SESSIONS";
+
+export const dateOptions = {
+  month: 'long',
+  day: 'numeric',
+};

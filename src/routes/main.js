@@ -4,7 +4,11 @@
  import { Switch, Route } from "react-router-dom";
 
  import { getMovies } from "../actions";
- import { MainPageContainer, MovieContainer } from "../containers";
+ import {
+     MainPageContainer,
+     MovieContainer,
+     ScheduleContainer
+ } from "../containers";
 
 const { Content } = Layout;
 
@@ -22,8 +26,9 @@ export class Main extends React.Component {
         { isLoading
             ? <Spin indicator={<Icon type="loading-3-quarters" style={{ fontSize: 80 }} spin />} />
             : <Switch>
-                <Route path={"/"} exact component={MainPageContainer}/>
-                <Route path={"/movie/:id"} component={MovieContainer}/>
+                <Route exact path={"/"} component={MainPageContainer}/>
+                <Route exact path={"/movie/:id"} component={MovieContainer}/>
+                <Route exact path={"/schedule"} component={ScheduleContainer}/>
             </Switch>}
     </Content>
         )
