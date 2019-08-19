@@ -1,7 +1,7 @@
 import axios from "axios";
 
-import {SET_SESSIONS, URL_SESSIONS} from "../constants";
-import { isLoading, loadingFail} from "./general";
+import {URL_SESSIONS, SET_SESSIONS} from "../constants";
+import {isLoading, loadingFail} from "./general";
 
 export const setSessions = (sessions) => ({ type: SET_SESSIONS, payload: sessions });
 

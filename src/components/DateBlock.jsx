@@ -3,7 +3,7 @@ import {dateOptions} from "../constants";
 
 export const DateBlock = ({ moviesOnDate }) => {
     return moviesOnDate.map((elem) => (
-      <div key={elem.id}>
+      <div key={elem._id}>
           <h3>{new Date (elem.date).toLocaleDateString("ru", dateOptions)}</h3>
 
       </div>

@@ -11,7 +11,7 @@ export const HeaderComponent = () => (
       {/*<div className="logo"/>*/}
       <nav>
           <NavLink to="/" activeClassName="active">Films</NavLink>
-          <NavLink to="/shedule" activeClassName="active">Shedule</NavLink>
+          <NavLink to="/schedule" activeClassName="active">Schedule</NavLink>
           <NavLink to="/user" activeClassName="active">3</NavLink>
       </nav>
   </Header>
