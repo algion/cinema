@@ -9,41 +9,32 @@ export const Filter = ({movies, setFilteredMovies, genres}) => {
 
     const getFilteredMovies = (valueInput, valueSelect) => {
         return movies.reduce((acc, item) => {
-            if (
-                valueInput &&
-                valueSelect &&
-                item.genre && item.genre.length
-            ) {
-                if (
-                    item.genre.some(elem => elem.trim() === valueSelect) &&
-                    item.title.toLowerCase().includes(valueInput.toLowerCase())
-                ) {
-                    acc.push(item) ;
-                }
-            } else if (
-                valueInput &&
-                !valueSelect &&
-                item.title.toLowerCase().includes(valueInput.toLowerCase())
-            ){
-        acc.push(item);
+            const hasAllFilters = valueInput && valueSelect;
+            const hasJustTitleFilter = valueInput && !valueSelect;
+            const hasJustSelectFilter = !valueInput && valueSelect;
+            const checkSelectFilter = item.genre.length &&
+                item.genre.some(elem => elem.trim() === valueSelect);
+            const checkTitleFilter = item.title.toLowerCase().includes(valueInput.toLowerCase());
+            if (hasAllFilters && checkSelectFilter && checkTitleFilter) {
+                acc.push(item);
+            }  else  if (hasJustTitleFilter && checkTitleFilter) {
+                acc.push(item);
+            } else if (hasJustSelectFilter && checkSelectFilter){
+                acc.push(item);
+            }
+            return acc;
+            }, []);
+    };
 
-    } else if (!valueInput && valueSelect && item.genre && item.genre.length){
-        acc.push(item);
-    }
-    return acc;
-}, []);
-};
-
-const handleChangeInput = (e) => {
+    const handleChangeInput = (e) => {
     const {value} = e.target;
     setValueInput(value) ;
     setFilteredMovies(getFilteredMovies(value, valueSelect));
-} ;
-
-const handleChangeSelect = (value) => {
+    };
+    const handleChangeSelect = (value) => {
     setValueSelect(value);
     setFilteredMovies(getFilteredMovies(valueInput, value));
-};
+    };
     return (
         <div className="filter">
             <h2>Filter:</h2>
