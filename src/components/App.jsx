@@ -10,6 +10,6 @@ export const App = () => (
     <Layout className="layout">
     <HeaderComponent/>
         <MainContainer/>
-        <Footer>Ant Design ©2018 Created by Ant UED</Footer>
+        <Footer><div className="text-wrap"><span>Ant Design ©2019 Created by Ant UED</span></div></Footer>
     </Layout>
 );

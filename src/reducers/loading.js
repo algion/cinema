@@ -1,4 +1,4 @@
-import {IS_LOADING, LOADING_FAIL, SET_MOVIES, SET_SESSIONS} from "../constants";
+import { IS_LOADING, LOADING_FAIL, SET_MOVIES, SET_SESSIONS } from "../constants";
 
 const initialValues = {
     isLoading: false

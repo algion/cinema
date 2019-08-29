@@ -3,4 +3,10 @@ export * from "./App";
 export * from "./MovieList";
 export * from "./InfoBlock";
 export * from "./Filter";
-export * from "./DateBlock";
+export * from "./SessionsBlock";
+export * from "./MovieSession";
+export * from "./ModalBuyTicket";
+export * from "./SessionInfo";
+export * from "./Places";
+export * from "./Form";
+export * from "./Project"

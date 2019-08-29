@@ -7,6 +7,7 @@ const MainPage = ({ movies, genres }) => {
     const [filteredMovies, setFilteredMovies] = useState([]);
 
     return (
+
         <React.Fragment>
             <Filter
                 movies={movies}
